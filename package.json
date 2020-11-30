@@ -1,0 +1,105 @@
+{
+    "name": "rollup-es2cjs-fix",
+    "version": "0.0.1",
+    "main": "index.js",
+    "files": [
+        "index.js"
+    ],
+    "engines": {
+        "node": ">=15.0.0",
+        "npm": ">=7.0.2"
+    },
+    "scripts": {
+        "commit": "git-cz",
+        "publish:check": "semantic-release --branch master --no-ci --dry-run",
+        "prepublishOnly": "npm run semantic-release",
+        "semantic-release": "semantic-release --no-ci"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DasRed/rollup-es2cjs-fix.git"
+    },
+    "author": "DasRed",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DasRed/rollup-es2cjs-fix/issues"
+    },
+    "homepage": "https://github.com/DasRed/rollup-es2cjs-fix#readme",
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "@semantic-release/changelog": "^5.0.1",
+        "@semantic-release/git": "^9.0.0",
+        "commitizen": "^4.2.2",
+        "cz-conventional-changelog": "^3.3.0",
+        "husky": "^4.3.0",
+        "semantic-release": "^17.2.4"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ],
+        "rules": {
+            "header-max-length": [
+                2,
+                "always",
+                200
+            ],
+            "scope-case": [
+                1,
+                "always",
+                [
+                    "upper-case",
+                    "lower-case",
+                    "pascal-case",
+                    "start-case"
+                ]
+            ],
+            "subject-case": [
+                1,
+                "always",
+                [
+                    "sentence-case",
+                    "lower-case",
+                    "start-case"
+                ]
+            ]
+        }
+    },
+    "release": {
+        "plugins": [
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            "@semantic-release/github"
+        ],
+        "prepare": [
+            "@semantic-release/changelog",
+            "@semantic-release/npm",
+            {
+                "path": "@semantic-release/git",
+                "assets": [
+                    "package.json",
+                    "package-lock.json",
+                    "CHANGELOG.md"
+                ]
+            }
+        ]
+    },
+    "keywords": [
+        "rollup-es2cjs-fix",
+        "rollup",
+        "es too cjs",
+        "cjs",
+        "es"
+    ]
+}
