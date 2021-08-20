@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/DasRed/rollup-es2cjs-fix/compare/v1.0.0...v1.1.0) (2021-08-20)
+
+
+### Features
+
+* parsing for exports ([41a69b5](https://github.com/DasRed/rollup-es2cjs-fix/commit/41a69b5c393dabe22cf33102ffd4e7df2bf893cf))
+
 # 1.0.0 (2020-11-30)
 
 
