@@ -32,48 +32,11 @@
         "@semantic-release/git": "^9.0.0",
         "commitizen": "^4.2.2",
         "cz-conventional-changelog": "^3.3.0",
-        "husky": "^4.3.0",
         "semantic-release": "^17.2.4"
     },
     "config": {
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
-        }
-    },
-    "husky": {
-        "hooks": {
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        }
-    },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ],
-        "rules": {
-            "header-max-length": [
-                2,
-                "always",
-                200
-            ],
-            "scope-case": [
-                1,
-                "always",
-                [
-                    "upper-case",
-                    "lower-case",
-                    "pascal-case",
-                    "start-case"
-                ]
-            ],
-            "subject-case": [
-                1,
-                "always",
-                [
-                    "sentence-case",
-                    "lower-case",
-                    "start-case"
-                ]
-            ]
         }
     },
     "release": {
